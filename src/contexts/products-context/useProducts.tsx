@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-
 import { useProductsContext } from './ProductsContextProvider';
 import { IProduct } from 'models';
 import { getProducts } from 'services/products';

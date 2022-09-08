@@ -5,7 +5,6 @@ import { GithubCorner, GithubStarButton } from 'components/Github';
 import Filter from 'components/Filter';
 import Products from 'components/Products';
 import Cart from 'components/Cart';
-
 import { useProducts } from 'contexts/products-context';
 
 import * as S from './style';
