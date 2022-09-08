@@ -2,14 +2,15 @@ import formatPrice from 'utils/formatPrice';
 import CartProducts from './CartProducts';
 
 import { useCart } from 'contexts/cart-context';
-import {checkOut} from '../../facebookpixel'
+// import {checkOut} from '../../facebookpixel'
+import ReactPixel from 'react-facebook-pixel';
 import * as S from './style';
 
 const Cart = () => {
   const { products, total, isOpen, openCart, closeCart } = useCart();
 
   const handleCheckout = () => {
-    checkOut();
+    ReactPixel.track("InitiateCheckout")
     if (total.productQuantity) {
       alert(
         `Checkout - Subtotal: ${total.currencyFormat} ${formatPrice(

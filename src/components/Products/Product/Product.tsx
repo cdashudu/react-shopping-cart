@@ -6,7 +6,9 @@ import { IProduct } from 'models';
 import { useCart } from 'contexts/cart-context';
 
 import * as S from './style';
-import {addToCart} from '../../../facebookpixel'
+// import {addToCart} from '../../../facebookpixel'
+import ReactPixel from 'react-facebook-pixel';
+
 interface IProps {
   product: IProduct;
 }
@@ -41,7 +43,7 @@ const Product = ({ product }: IProps) => {
   }
 
   const handleAddProduct = () => {
-    addToCart();
+    ReactPixel.track('AddToCart')
     addProduct({ ...product, quantity: 1 });
     openCart();
   };
